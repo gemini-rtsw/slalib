@@ -1,0 +1,32 @@
+25 November 2002   V1-4
+      This new version has been updated to support orbit predictions 
+      within the TCC. The calling interface is the same but the library
+      includes one new routine - slaNutc80. 
+
+17 December 2003   V1-5
+      Changes for the port to GEM8.5 (EPICS 3.13.9).
+
+06 July 2004       V1-6
+      Updated routines from PTW for better handling of asteroids/comets.
+      New files epv.c and plantu.c added plus upgrades to plantu.c and
+      pertue.c 
+
+03 January 2006   V1-6-1
+      Modified dat.c to account for leap second 
+
+11 January 2006   V1-6-2
+      Modified slalibInstall to allow compiling for EPICS releases other
+      than GEM8.5
+
+16 January 2007 V1-9
+      Updated routines from PTW.
+      New files c2i.c c2ipa.c c2ipad.c c2ipas.c c2iqk.c c2iqkz.c 
+         eo.c eors.c era.c fw2m.c fw2xy.c g2ixys.c gst.c i2c.c i2cqk.c 
+         i2o.c i2opa.c i2opad.c i2opat.c i2oqk.c int2in.c nu.c nu00a.c 
+         o2i.c o2iqk.c pfw.c pncio.c pneqx.c pomom.c s.c sp.c
+
+29 December 2008 V1-9-1
+      Modified dat.c to account for leap second 
+
+26 June 2012 V1-9-2
+      Modified dat.c to account for leap second 

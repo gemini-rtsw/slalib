@@ -3,29 +3,28 @@ TOP=../..
 include $(TOP)/configure/CONFIG
 #----------------------------------------
 #  ADD MACRO DEFINITIONS AFTER THIS LINE
-
 #=============================
-# Build a support module called <APPNAME>
+
+#==================================================
+# build a support library
 
 LIBRARY_IOC += slalib
 
-# <APPNAME>.dbd will be created and installed
+# xxxRecord.h will be created from xxxRecord.dbd
+#DBDINC += xxxRecord
+# install slalib.dbd into <top>/dbd
 DBD += slalib.dbd
 
-# slalib.dbd will be made up from these files:
-slalib_DBD += base.dbd
-# List local .dbd files here
-# slalib_DBD += xxx.dbd
+# specify all source files to be compiled and added to the library
+SRCS.c    = $(wildcard ../*.c)
+slalib_SRCS += $(strip $(patsubst ../%.c,    %.o, $(SRCS.c)))
 
-# Include dbd files for external support modules:
-# slalib_DBD += genSubRecord.dbd
+INC += slalib.h
+INC += slamac.h
 
-# specify all source files to be compiled
-# including sequencer (.st) source files
-#slalib_SRCS += xxx.c
-#slalib_SRCS += xxx.st
+slalib_LIBS += $(EPICS_BASE_IOC_LIBS)
 
-#=============================
+#===========================
 
 include $(TOP)/configure/RULES
 #----------------------------------------
