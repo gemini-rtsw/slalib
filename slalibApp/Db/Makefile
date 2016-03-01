@@ -4,17 +4,25 @@ include $(TOP)/configure/CONFIG
 #  ADD MACRO DEFINITIONS AFTER THIS LINE
 
 #----------------------------------------------------
-#  Optimization of db files using dbst (DEFAULT: NO)
-#DB_OPT = YES
+# Find any .sym files in the Db directory
+vpath %.sym ..
 
-#----------------------------------------------------
-# Create and install (or just install) into <top>/db
-# databases, templates, substitutions like this
-#DB += xxx.db
+# Install database files created from .sch files
+# using TDCT (or just install .db files) into <top>/db.
+# TDCT_CFG can be redefined here if needed
+#TDCT_CFG = ../tdct.cfg
 
-#----------------------------------------------------
-# If <anyname>.db template is not named <anyname>*.template add
-# <anyname>_template = <templatename>
+# Make depends on all .sch files
+DEPSCHS = $(wildcard ../*.sch)
+
+# Add target .db files below here. Each must
+# correspond to a .sch file
+# DB += xxx.db
+
+# If .sym files are in this support module,
+# simply install them into <top>/db.
+# DB += $(wildcard ../*.sym)
+
 
 include $(TOP)/configure/RULES
 #----------------------------------------
