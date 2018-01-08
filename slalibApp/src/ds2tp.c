@@ -1,5 +1,6 @@
 #include "slalib.h"
 #include "slamac.h"
+#include "epicsStdioRedirect.h"
 void slaDs2tp ( double ra, double dec, double raz, double decz,
                 double *xi, double *eta, int *j )
 /*
@@ -31,6 +32,13 @@ void slaDs2tp ( double ra, double dec, double raz, double decz,
 {
    double sdecz, sdec, cdecz, cdec, radif, sradif, cradif, denom;
 
+   if ( !ra || !dec || !raz || !decz ) {
+       printf("slaDs2tp: Invalid input values: ra=%f dec=%f raz=%f decz=%f \n",ra, dec, raz, decz);
+       *xi  = TINY;
+       *eta = TINY;
+       *j   = 0;
+       return;
+   }
 
 /* Trig functions */
    sdecz = sin ( decz );
@@ -49,15 +57,23 @@ void slaDs2tp ( double ra, double dec, double raz, double decz,
       *j = 0;
    } else if ( denom >= 0.0 ) {
       *j = 1;
+      printf("slaDs2tp: j=1 denom=%f sdec=%f sdecz=%f cdec=%f cdecz=%f cradif=%f TINY=%f \n",
+      			denom,sdec,sdecz,cdec,cdecz,cradif,TINY);
       denom = TINY;
    } else if ( denom > -TINY ) {
       *j = 2;
+      printf("slaDs2tp: j=2 denom=%f sdec=%f sdecz=%f cdec=%f cdecz=%f cradif=%f TINY=%f \n",
+      			denom,sdec,sdecz,cdec,cdecz,cradif,TINY);
       denom = -TINY;
    } else {
+      printf("slaDs2tp: j=3 denom=%f sdec=%f sdecz=%f cdec=%f cdecz=%f cradif=%f TINY=%f ra=%f dec=%f\n",
+      			denom,sdec,sdecz,cdec,cdecz,cradif,TINY,ra,dec);
       *j = 3;
    }
 
 /* Compute tangent plane coordinates (even in dubious cases) */
+   if ( denom ) {
    *xi = cdec * sradif / denom;
    *eta = ( sdec * cdecz - cdec * sdecz * cradif ) / denom;
+   }
 }
