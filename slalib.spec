@@ -39,7 +39,7 @@ EPICS is a set of Open Source software tools, libraries and applications develop
 This is the application %{name}.
 
 %prep
-%setup -q -n %{name}
+%setup -q 
 
 %build
 make distclean uninstall
