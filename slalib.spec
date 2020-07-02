@@ -86,6 +86,9 @@ rm -rf $RPM_BUILD_ROOT
 /%{_prefix}/%{name}
 
 %changelog
+* Thu Jul 02 2020 Matt Rippa <mrippa@gemini.edu> 3.15.8-1.9.11.20200702gitfb92904
+- Updated Prefix location (mrippa@gemini.edu)
+
 * Thu Jul 02 2020 Matt Rippa <mrippa@gemini.edu> 3.15.8-1.9.11.20200702git8ab6cea
 - new package built with tito
 
