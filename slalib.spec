@@ -1,5 +1,4 @@
-%define _prefix __auto__
-%define gemopt opt
+%define _prefix /gem_base/epics/support
 %define name slalib
 %define version 3.15.8
 %define release 1.9.11
@@ -50,9 +49,9 @@ make
 ## install -D zzz/zzz  $RPM_BUILD_ROOT/%{_prefix}/zzz/zzz
 export DONT_STRIP=1
 rm -rf $RPM_BUILD_ROOT
-mkdir -p $RPM_BUILD_ROOT/%{_prefix}/%{gemopt}/epics/modules/slalib
-cp -r lib $RPM_BUILD_ROOT/%{_prefix}/%{gemopt}/epics/modules/slalib/
-cp -r include $RPM_BUILD_ROOT/%{_prefix}/%{gemopt}/epics/modules/slalib/
+mkdir -p $RPM_BUILD_ROOT/%{_prefix}/%{name}
+cp -r lib $RPM_BUILD_ROOT/%{_prefix}/%{name}
+cp -r include $RPM_BUILD_ROOT/%{_prefix}/%{name}
 
 ## if you want to do something after installation uncomment the following
 ## and list the actions to perform:
@@ -68,7 +67,7 @@ cp -r include $RPM_BUILD_ROOT/%{_prefix}/%{gemopt}/epics/modules/slalib/
 ## see the example below how to do it:
 # %postun
 if [ "$1" = "0" ]; then
-	rm -rf/%{_prefix}/%{gemopt}/epics/modules/slalib
+	rm -rf/%{_prefix}/%{name} 
 fi
 
 ## If you want to have a devel-package to be generated and do some
@@ -84,7 +83,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(-,root,root)
 ## list files that are installed here, e.g
-/%{_prefix}/%{gemopt}/epics/modules/slalib
+/%{_prefix}/%{name}
 
 %changelog
 * Thu Jul 02 2020 Matt Rippa <mrippa@gemini.edu> 3.15.8-1.9.11.20200702git8ab6cea
