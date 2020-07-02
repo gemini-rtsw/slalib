@@ -87,6 +87,9 @@ rm -rf $RPM_BUILD_ROOT
 /%{_prefix}/%{gemopt}/epics/modules/slalib
 
 %changelog
+* Thu Jul 02 2020 Matt Rippa <mrippa@gemini.edu> 3.15.8-1.9.11.20200702gitc97bb86
+- New test change for tito (mrippa@gemini.edu)
+
 * Sat Jun 13 2020 Matt Rippa <mrippa@gemini.edu> 3.15.8-1.9.11.20200613git89d2d84
 - Simplified setup prep (mrippa@gemini.edu)
 
