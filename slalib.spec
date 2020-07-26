@@ -84,6 +84,9 @@ rm -rf $RPM_BUILD_ROOT
    /%{_prefix}/%{name}/configure
 
 %changelog
+* Sun Jul 26 2020 fkraemer <fkraemer@gemini.edu> 3.15.8-1.9.7.20200726643cc78
+- new package built with tito
+
 * Sun Jul 26 2020 fkraemer <fkraemer@gemini.edu> 3.15.8-4.1.13.20200726ff76345
 - RPM build possible
 - no bin dir, so removed from specfile (fkraemer@gemini.edu)
