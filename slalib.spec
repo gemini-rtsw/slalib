@@ -1,5 +1,5 @@
 %define _prefix /gem_base/epics/support
-%define name geminiRec
+%define name slalib
 %define version 3.15.8
 %define release 1.9.7
 %define repository gemdev
