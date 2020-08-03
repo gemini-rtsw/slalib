@@ -31,7 +31,7 @@ Prefix: %{_prefix}
 BuildRequires: epics-base-devel re2c gemini-ade
 Requires: epics-base
 ## Switch dependency checking off
-# AutoReqProv: no
+## AutoReqProv: no
 
 %description
 This is the module %{name}.
