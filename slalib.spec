@@ -84,6 +84,13 @@ rm -rf $RPM_BUILD_ROOT
    /%{_prefix}/%{name}/configure
 
 %changelog
+* Fri Aug 28 2020 Felix Kraemer <fkraemer@gemini.edu> 3.15.8-1.9.7.2020082821310acb1b4
+- Adjustments to include configuration from configure/RELEASE.local for testing
+  purposes (fkraemer@gemini.edu)
+- Release tag enriched with hour and minute (%%H%%M) to be able to build
+  several RPMs a day without messing up the repo (fkraemer@gemini.edu)
+- very small change to test merge request (fkraemer@gemini.edu)
+
 * Sun Jul 26 2020 fkraemer <fkraemer@gemini.edu> 3.15.8-1.9.7.202007265260771
 - new package built with tito
 
