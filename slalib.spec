@@ -19,7 +19,7 @@
 Summary: %{name} Package, a module for EPICS base
 Name: %{name}
 Version: 1.9.7
-Release: 2%{?dist}
+Release: 3%{?dist}
 License: EPICS Open License
 Group: Applications/Engineering
 Source0: %{name}-%{version}.tar.gz
@@ -82,6 +82,9 @@ rm -rf $RPM_BUILD_ROOT
    /%{_prefix}/%{name}/configure
 
 %changelog
+* Wed Dec 30 2020 Roberto Rojas <rrojas@gemini.edu> 1.9.7-3
+- save everything
+
 * Thu Oct 08 2020 fkraemer <fkraemer@gemini.edu> 1.9.7-2
 - applied new version/release scheme and new yum repository structure
 - Automatic commit of package [slalib] release
