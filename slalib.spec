@@ -19,7 +19,7 @@
 Summary: %{name} Package, a module for EPICS base
 Name: %{name}
 Version: 1.9.7
-Release: 5%{?dist}
+Release: 6%{?dist}
 License: EPICS Open License
 Group: Applications/Engineering
 Source0: %{name}-%{version}.tar.gz
@@ -82,7 +82,7 @@ rm -rf $RPM_BUILD_ROOT
    /%{_prefix}/%{name}/configure
 
 %changelog
-* Wed Jul 07 2021 Unknown name 1.9.7-5
+* Wed Jul 07 2021 Emma Kurz <emma.kurz@noirlab.edu> 1.9.7-5
 - Closes issue #1
 - New branch for EPICS 7 RTEMS 5
 
