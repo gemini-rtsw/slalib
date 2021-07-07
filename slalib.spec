@@ -82,7 +82,8 @@ rm -rf $RPM_BUILD_ROOT
    /%{_prefix}/%{name}/configure
 
 %changelog
-* Thu Aug 19 2021 Hawi Stecher
+* Wed Jul 07 2021 Unknown name 1.9.7-5
+- Closes issue #1
 - New branch for EPICS 7 RTEMS 5
 
 * Wed Dec 30 2020 Roberto Rojas <rrojas@gemini.edu> 1.9.7-4
