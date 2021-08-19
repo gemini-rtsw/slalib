@@ -25,8 +25,8 @@ TEMPLATE_TOP=$(EPICS_BASE)/templates/makeBaseApp/top
 #SNCSEQ=$(EPICS_BASE)/../modules/soft/seq
 
 # EPICS_BASE usually appears last so other apps can override stuff:
-#EPICS_BASE=/gem_base/epics/epics-base
-EPICS_BASE=/home/mrippa/work/vendor/epics-base
+EPICS_BASE=/gem_base/epics/epics-base
+#EPICS_BASE=/home/mrippa/work/vendor/epics-base
 
 # include local RELEASE configuration file (this will be ignored by with
 # .gitignore to keep it local and prevent poisoning the default build 
